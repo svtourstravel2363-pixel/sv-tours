@@ -4,9 +4,44 @@ import { getBiz, getItems, placeList } from "@/lib/content";
 import { Phone, ShieldCheck, MessageCircle } from "lucide-react";
 
 export const metadata = {
-  title: "Book a Cab in Pune – Local, Outstation & Airport",
-  description: "Book your ride online in under a minute. No login needed — confirm instantly on WhatsApp. Local, outstation, airport transfer and tour bookings from Pune.",
-  alternates: { canonical: "/booking" },
+  title: {
+    absolute:
+      "Book a Cab in Pune Online | SV Tours & Travels",
+  },
+
+  description:
+    "Book a cab in Pune with SV Tours & Travels. Reserve local taxis, outstation cabs, airport transfers and tour vehicles online. Choose Sedan, SUV, MUV, Innova Crysta or Tempo Traveller.",
+
+  alternates: {
+    canonical: "/booking",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
+
+  openGraph: {
+    title: "Book a Cab in Pune Online | SV Tours & Travels",
+    description:
+      "Book local, outstation and airport cab services in Pune. Select your vehicle and send your booking request online.",
+    url: "https://www.svtourstravel.com/booking",
+    siteName: "SV Tours & Travels",
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Cab in Pune | SV Tours & Travels",
+    description:
+      "Reserve your Pune local cab, outstation taxi or airport transfer online.",
+  },
 };
 
 export default async function BookingPage({ searchParams }: PageProps<"/booking">) {

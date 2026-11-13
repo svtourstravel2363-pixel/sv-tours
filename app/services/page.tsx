@@ -6,9 +6,44 @@ import { getRates } from "@/lib/rates";
 import { getBiz, getItems, COLOURS } from "@/lib/content";
 
 export const metadata = {
-  title: "Cab Services in Pune – Local, Outstation & Airport",
-  description: "Local 8hr/80km cab packages from ₹2,200, outstation taxi from ₹13/km, Pune and Mumbai airport transfers, and tour packages to Goa, Mahabaleshwar and Lonavala.",
-  alternates: { canonical: "/services" },
+  title: {
+    absolute:
+      "Cab Services in Pune | Local, Outstation & Airport Taxi – SV Tours",
+  },
+
+  description:
+    "Explore cab services in Pune with SV Tours & Travels. Book local 8-hour packages, outstation taxis, Pune and Mumbai airport transfers, Sedan, SUV, MUV, Innova Crysta and Tempo Traveller for comfortable travel.",
+
+  alternates: {
+    canonical: "/services",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
+
+  openGraph: {
+    title: "Cab Services in Pune | SV Tours & Travels",
+    description:
+      "Book local cabs, outstation taxis, airport transfers and tour packages from Pune. Multiple vehicle categories available.",
+    url: "https://www.svtourstravel.com/services",
+    siteName: "SV Tours & Travels",
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Cab Services in Pune | SV Tours & Travels",
+    description:
+      "Local cab packages, outstation taxi, airport transfers and tour packages from Pune.",
+  },
 };
 
 const card = "rounded-2xl bg-white p-6 text-center shadow ring-1 ring-slate-200";

@@ -12,7 +12,7 @@ export const metadata = {
   description: "Hire a Toyota Glanza, Dzire, Rumion, Ertiga, Creta, Innova Crysta or Force Urbania with driver in Pune. Clean, comfortable vehicles with experienced drivers.",
   alternates: { canonical: "/fleet" },
 };
-const LABEL = { sedan: "Sedan", suv: "SUV / MUV", premium: "Premium SUV", van: "Tempo Traveller / Urbania" } as const;
+const LABEL = { sedan: "Sedan", suv: "SUV", mpv: "MUV", premium: "Premium SUV", van: "Tempo Traveller / Urbania" } as const;
 
 export default async function Fleet() {
   const st = await getSettings();

@@ -17,9 +17,12 @@ export default async function AdminVehicles({ searchParams }: PageProps<"/admin/
         <Field label="Vehicle name (e.g. Toyota Innova Crysta)"><input name="name" required className={inputCls} /></Field>
         <Field label="Category">
           <select name="category" className={inputCls}>
-            <option value="sedan">Sedan</option><option value="suv">SUV / MUV</option>
-            <option value="premium">Premium SUV</option><option value="van">Tempo Traveller / Urbania</option>
-          </select>
+  <option value="sedan">Sedan</option>
+  <option value="suv">SUV</option>
+  <option value="mpv">MUV</option>
+  <option value="premium">Premium SUV</option>
+  <option value="van">Tempo Traveller / Urbania</option>
+</select>
         </Field>
         <Field label="Seats (e.g. 7 seats)"><input name="seats" className={inputCls} /></Field>
         <Field label="Vehicle number (e.g. MH12 AB 2362)"><input name="reg_number" className={inputCls} /></Field>

@@ -25,7 +25,23 @@ export default async function Home() {
   const st = biz.settings;
   const { data: reviews } = await supabase.from("reviews").select("id,name,rating,comment").eq("approved", true).order("created_at", { ascending: false }).limit(9);
   const { data: dbVehicles } = await supabase.from("vehicles").select("*").eq("active", true).order("created_at");
-  const fleet = dbVehicles && dbVehicles.length ? dbVehicles.map((v) => ({ type: ({ sedan: "Sedan", suv: "SUV / MUV", premium: "Premium SUV", van: "Tempo Traveller / Urbania" } as const)[v.category as "sedan"], model: v.name, note: v.note ?? "", seats: v.seats ?? "", image: v.image_url as string | null, plate: v.reg_number as string | null, kind: v.category as "sedan" | "suv" | "premium" | "van" })) : FLEET;
+  const fleet = dbVehicles && dbVehicles.length
+  ? dbVehicles.map((v) => ({
+      type: ({
+        sedan: "Sedan",
+        suv: "SUV",
+        mpv: "MUV",
+        premium: "Premium SUV",
+        van: "Tempo Traveller / Urbania",
+      } as Record<string, string>)[v.category] ?? v.category,
+      model: v.name,
+      note: v.note ?? "",
+      seats: v.seats ?? "",
+      image: v.image_url as string | null,
+      plate: v.reg_number as string | null,
+      kind: v.category as "sedan" | "suv" | "mpv" | "premium" | "van",
+    }))
+  : FLEET;
   const avg = reviews && reviews.length ? reviews.reduce((a, r) => a + r.rating, 0) / reviews.length : 0;
 
   return (

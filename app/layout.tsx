@@ -11,7 +11,7 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 export const viewport: Viewport = { themeColor: "#0d2255", width: "device-width", initialScale: 1 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://svtourstravel.com"),
+  metadataBase: new URL("https://www.svtourstravel.com"),
   title: { default: "SV Tours & Travels | Cab, Outstation & Tour Packages in Pune", template: "%s | SV Tours & Travels" },
   description: "Book reliable cabs in Pune: local 8hr/80km packages, outstation taxi, Pune & Mumbai airport transfers, Innova Crysta, Tempo Traveller and tour packages to Goa, Mahabaleshwar and Lonavala.",
   applicationName: "SV Tours & Travels",
@@ -36,25 +36,63 @@ const jsonLd = {
   "@graph": [
     {
       "@type": ["LocalBusiness", "TaxiService"],
-      "@id": "https://svtourstravel.com/#business",
+      "@id": "https://www.svtourstravel.com/#business",
       name: "SV Tours & Travels",
       legalName: "SV Enterprises",
-      url: "https://svtourstravel.com",
-      logo: "https://svtourstravel.com/og-logo.png",
-      image: "https://svtourstravel.com/og-logo.png",
+      url: "https://www.svtourstravel.com",
+      logo: "https://www.svtourstravel.com/og-logo.png",
+      image: "https://www.svtourstravel.com/og-logo.png",
       telephone: ["+919860740890", "+919881372700"],
       email: "svtourstravel2363@gmail.com",
       slogan: "Your Journey, Our Responsibility",
-      description: "Cab service in Pune: local packages, outstation taxi, airport transfers and tour packages.",
-      address: { "@type": "PostalAddress", streetAddress: "Lane no. 8, Telco Colony, Dattanagar, Ambegaon, Jambhulwadi Road", addressLocality: "Pune", addressRegion: "Maharashtra", postalCode: "411046", addressCountry: "IN" },
-      areaServed: [{ "@type": "City", name: "Pune" }, { "@type": "City", name: "Mumbai" }, { "@type": "State", name: "Maharashtra" }, { "@type": "Country", name: "India" }],
-      openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "00:00", closes: "23:59" }],
+      description:
+        "Cab service in Pune: local packages, outstation taxi, airport transfers and tour packages.",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress:
+          "Lane no. 8, Telco Colony, Dattanagar, Ambegaon, Jambhulwadi Road",
+        addressLocality: "Pune",
+        addressRegion: "Maharashtra",
+        postalCode: "411046",
+        addressCountry: "IN",
+      },
+      areaServed: [
+        { "@type": "City", name: "Pune" },
+        { "@type": "City", name: "Mumbai" },
+        { "@type": "State", name: "Maharashtra" },
+        { "@type": "Country", name: "India" },
+      ],
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "00:00",
+          closes: "23:59",
+        },
+      ],
       sameAs: ["https://www.instagram.com/sv_tours_and_travels"],
       priceRange: "₹₹",
       currenciesAccepted: "INR",
       paymentAccepted: "Cash, UPI, Bank Transfer",
     },
-    { "@type": "WebSite", "@id": "https://svtourstravel.com/#website", url: "https://svtourstravel.com", name: "SV Tours & Travels", inLanguage: "en-IN", publisher: { "@id": "https://svtourstravel.com/#business" } },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.svtourstravel.com/#website",
+      url: "https://www.svtourstravel.com",
+      name: "SV Tours & Travels",
+      inLanguage: "en-IN",
+      publisher: {
+        "@id": "https://www.svtourstravel.com/#business",
+      },
+    },
   ],
 };
 

@@ -6,6 +6,8 @@ import ReviewForm from "@/components/ReviewForm";
 import Stars from "@/components/Stars";
 import { STATUS_STYLE } from "@/lib/data";
 
+export const metadata = { title: "My Account", robots: { index: false, follow: false } };
+
 export default async function Account() {
   const supabase = await createClient();
   const { data: auth } = await supabase.auth.getUser();

@@ -36,10 +36,10 @@ export const TOURS = [
 ];
 
 export const FLEET = [
-  { type: "Sedan", model: "Toyota Glanza", note: "Aura, Xcent and Dzire also available.", seats: "4 seats", kind: "sedan" as const, image: "/vehicles/toyota-glanza.webp" as string | null },
-  { type: "SUV / MUV", model: "Toyota Rumion / Ertiga", note: "Creta also available.", seats: "6-7 seats", kind: "suv" as const, image: "/vehicles/toyota-rumion.webp" as string | null },
-  { type: "Premium SUV", model: "Toyota Innova Crysta", note: "Comfortable premium travel.", seats: "7 seats", kind: "premium" as const, image: "/vehicles/innova-crysta.webp" as string | null },
-  { type: "Tempo Traveller / Urbania", model: "Force Traveller / Urbania", note: "Different seating capacities available.", seats: "12-17 seats", kind: "van" as const, image: "/vehicles/force-urbania.webp" as string | null },
+  { type: "Sedan", model: "Toyota Glanza", note: "Aura, Xcent and Dzire also available.", seats: "4 seats", kind: "sedan" as const, image: null as string | null },
+  { type: "SUV / MUV", model: "Toyota Rumion", note: "Ertiga and Creta also available.", seats: "6-7 seats", kind: "suv" as const, image: null as string | null },
+  { type: "Premium SUV", model: "Toyota Innova Crysta", note: "Comfortable premium travel.", seats: "7 seats", kind: "premium" as const, image: null as string | null },
+  { type: "Tempo Traveller / Urbania", model: "Force Urbania", note: "Different seating capacities available.", seats: "12-17 seats", kind: "van" as const, image: null as string | null },
 ];
 
 export const STATUS_STYLE: Record<string, string> = {

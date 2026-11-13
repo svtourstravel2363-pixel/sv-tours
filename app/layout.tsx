@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -8,35 +8,59 @@ import StickyActions from "@/components/StickyActions";
 const playfair = Playfair_Display({ variable: "--font-display", subsets: ["latin"], weight: ["600", "700", "800"] });
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 
+export const viewport: Viewport = { themeColor: "#0d2255", width: "device-width", initialScale: 1 };
+
 export const metadata: Metadata = {
-  title: "SV Tours & Travels | Cab, Outstation & Tour Packages in Pune",
-  description: "Comfortable rides, reliable service. Local, outstation, airport transfers and tour packages from Pune. Book with SV Tours & Travels.",
   metadataBase: new URL("https://svtourstravel.com"),
-  alternates: { canonical: "/" },
-  keywords: ["cab service in Pune", "outstation taxi Pune", "Pune to Mumbai cab", "Pune airport taxi", "Innova Crysta on rent Pune", "tempo traveller Pune", "SV Tours & Travels"],
-  openGraph: { title: "SV Tours & Travels – Your Journey, Our Responsibility", description: "Cab, outstation, airport transfers and tour packages from Pune.", url: "https://svtourstravel.com", siteName: "SV Tours & Travels", images: [{ url: "/og-logo.png", width: 1024, height: 1024, alt: "SV Tours & Travels" }], locale: "en_IN", type: "website" },
+  title: { default: "SV Tours & Travels | Cab, Outstation & Tour Packages in Pune", template: "%s | SV Tours & Travels" },
+  description: "Book reliable cabs in Pune: local 8hr/80km packages, outstation taxi, Pune & Mumbai airport transfers, Innova Crysta, Tempo Traveller and tour packages to Goa, Mahabaleshwar and Lonavala.",
+  applicationName: "SV Tours & Travels",
+  authors: [{ name: "SV Enterprises" }],
+  creator: "SV Enterprises",
+  publisher: "SV Enterprises",
+  category: "travel",
+  keywords: ["cab service in Pune", "taxi service Pune", "outstation cab Pune", "Pune to Mumbai cab", "Pune airport taxi", "Mumbai airport taxi from Pune", "Innova Crysta on rent Pune", "tempo traveller on rent Pune", "Pune to Goa cab", "Mahabaleshwar tour from Pune", "Lonavala cab", "car rental Ambegaon Pune", "SV Tours & Travels"],
+  formatDetection: { telephone: true, address: true, email: true },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
+  openGraph: {
+    title: "SV Tours & Travels – Cab, Outstation & Tour Packages in Pune",
+    description: "Comfortable rides, reliable service. Local, outstation, airport transfers and tour packages from Pune across Maharashtra and India.",
+    url: "https://svtourstravel.com", siteName: "SV Tours & Travels", locale: "en_IN", type: "website",
+    images: [{ url: "/og-logo.png", width: 1024, height: 1024, alt: "SV Tours & Travels - Your Journey, Our Responsibility" }],
+  },
+  twitter: { card: "summary_large_image", title: "SV Tours & Travels | Cab Service in Pune", description: "Local, outstation, airport and tour packages from Pune.", images: ["/og-logo.png"] },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "TaxiService",
-  name: "SV Tours & Travels",
-  legalName: "SV Enterprises",
-  url: "https://svtourstravel.com",
-  logo: "https://svtourstravel.com/og-logo.png",
-  image: "https://svtourstravel.com/og-logo.png",
-  telephone: ["+919860740890", "+919881372700"],
-  email: "svtourstravel2363@gmail.com",
-  slogan: "Your Journey, Our Responsibility",
-  address: { "@type": "PostalAddress", streetAddress: "Lane no. 8, Telco Colony, Dattanagar, Ambegaon, Jambhulwadi Road", addressLocality: "Pune", addressRegion: "Maharashtra", postalCode: "411046", addressCountry: "IN" },
-  sameAs: ["https://www.instagram.com/sv_tours_and_travels"],
-  areaServed: ["Pune", "Mumbai", "Maharashtra", "India"],
-  priceRange: "₹₹",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "TaxiService"],
+      "@id": "https://svtourstravel.com/#business",
+      name: "SV Tours & Travels",
+      legalName: "SV Enterprises",
+      url: "https://svtourstravel.com",
+      logo: "https://svtourstravel.com/og-logo.png",
+      image: "https://svtourstravel.com/og-logo.png",
+      telephone: ["+919860740890", "+919881372700"],
+      email: "svtourstravel2363@gmail.com",
+      slogan: "Your Journey, Our Responsibility",
+      description: "Cab service in Pune: local packages, outstation taxi, airport transfers and tour packages.",
+      address: { "@type": "PostalAddress", streetAddress: "Lane no. 8, Telco Colony, Dattanagar, Ambegaon, Jambhulwadi Road", addressLocality: "Pune", addressRegion: "Maharashtra", postalCode: "411046", addressCountry: "IN" },
+      areaServed: [{ "@type": "City", name: "Pune" }, { "@type": "City", name: "Mumbai" }, { "@type": "State", name: "Maharashtra" }, { "@type": "Country", name: "India" }],
+      openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "00:00", closes: "23:59" }],
+      sameAs: ["https://www.instagram.com/sv_tours_and_travels"],
+      priceRange: "₹₹",
+      currenciesAccepted: "INR",
+      paymentAccepted: "Cash, UPI, Bank Transfer",
+    },
+    { "@type": "WebSite", "@id": "https://svtourstravel.com/#website", url: "https://svtourstravel.com", name: "SV Tours & Travels", inLanguage: "en-IN", publisher: { "@id": "https://svtourstravel.com/#business" } },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${playfair.variable} antialiased`}>
+    <html lang="en-IN" className={`${geistSans.variable} ${playfair.variable} antialiased`}>
       <body className="flex min-h-screen flex-col" suppressHydrationWarning>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Navbar />

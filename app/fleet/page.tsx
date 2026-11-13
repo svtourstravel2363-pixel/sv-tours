@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import JsonLd, { breadcrumbs } from "@/components/JsonLd";
 import CarArt from "@/components/CarArt";
 import VehicleVisual from "@/components/VehicleVisual";
 import { createClient } from "@/utils/supabase/server";
@@ -7,8 +8,8 @@ import { FLEET } from "@/lib/data";
 import { getSettings } from "@/lib/content";
 
 export const metadata = {
-  title: "Our Fleet – Sedan, SUV, Innova Crysta & Urbania on Rent in Pune | SV Tours & Travels",
-  description: "Hire Toyota Glanza, Dzire, Aura, Rumion, Ertiga, Creta, Innova Crysta and Force Urbania with driver in Pune. Clean, comfortable cars for every trip.",
+  title: "Cars on Rent in Pune – Sedan, SUV, Innova, Urbania",
+  description: "Hire a Toyota Glanza, Dzire, Rumion, Ertiga, Creta, Innova Crysta or Force Urbania with driver in Pune. Clean, comfortable vehicles with experienced drivers.",
   alternates: { canonical: "/fleet" },
 };
 const LABEL = { sedan: "Sedan", suv: "SUV / MUV", premium: "Premium SUV", van: "Tempo Traveller / Urbania" } as const;
@@ -20,6 +21,7 @@ export default async function Fleet() {
   const fleet = data && data.length ? data.map((v) => ({ type: LABEL[v.category as keyof typeof LABEL], model: v.name, note: v.note ?? "", seats: v.seats ?? "", image: v.image_url as string | null, plate: v.reg_number as string | null, kind: v.category as keyof typeof LABEL })) : FLEET;
   return (
     <>
+      <JsonLd data={breadcrumbs([["Our Fleet", "/fleet"]])} />
       <PageHero eyebrow="Our Fleet" title={st.fleet_sub} sub="Well-maintained, sanitised vehicles with experienced drivers." />
       <section className="mx-auto max-w-6xl px-4 py-14">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

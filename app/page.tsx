@@ -1,4 +1,5 @@
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
 import { Phone, MessageCircle, ChevronDown } from "lucide-react";
 import ContentIcon from "@/components/ContentIcon";
 import { getBiz, getItems, COLOURS } from "@/lib/content";
@@ -13,6 +14,11 @@ const H = ({ t, s }: { t: string; s: string }) => (
   <div className="mb-10 text-center"><h2 className="text-3xl font-extrabold text-slate-900 md:text-4xl">{t}</h2><p className="mt-2 text-slate-600">{s}</p><div className="mx-auto mt-3 h-1 w-16 rounded bg-amber-400" /></div>
 );
 
+export const metadata = {
+  title: { absolute: "SV Tours & Travels | Cab Service in Pune – Local, Outstation, Airport & Tours" },
+  alternates: { canonical: "/" },
+};
+
 export default async function Home() {
   const supabase = await createClient();
   const [biz, svc, locs, tours, faqs, trust, steps, stats] = await Promise.all([getBiz(), getItems("service"), getItems("location"), getItems("tour"), getItems("faq"), getItems("trust"), getItems("step"), getItems("stat")]);
@@ -24,6 +30,7 @@ export default async function Home() {
 
   return (
     <>
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.items.map((f) => ({ "@type": "Question", name: f.title, acceptedAnswer: { "@type": "Answer", text: f.subtitle } })) }} />
       <HeroBanner st={st} stats={stats.items} phone={biz.phones[0]} whatsapp={biz.whatsapp} />
 
       <section className="border-b border-slate-200 bg-white">

@@ -1,8 +1,13 @@
 import BookingForm from "@/components/BookingForm";
+import JsonLd, { breadcrumbs } from "@/components/JsonLd";
 import { getBiz, getItems, placeList } from "@/lib/content";
 import { Phone, ShieldCheck, MessageCircle } from "lucide-react";
 
-export const metadata = { title: "Book Your Ride | SV Tours & Travels" };
+export const metadata = {
+  title: "Book a Cab in Pune – Local, Outstation & Airport",
+  description: "Book your ride online in under a minute. No login needed — confirm instantly on WhatsApp. Local, outstation, airport transfer and tour bookings from Pune.",
+  alternates: { canonical: "/booking" },
+};
 
 export default async function BookingPage({ searchParams }: PageProps<"/booking">) {
   const sp = await searchParams;
@@ -10,6 +15,7 @@ export default async function BookingPage({ searchParams }: PageProps<"/booking"
   const q = (k: string) => (typeof sp[k] === "string" ? (sp[k] as string) : undefined);
   return (
     <div className="bg-gradient-to-br from-amber-50 via-white to-indigo-50">
+      <JsonLd data={breadcrumbs([["Booking", "/booking"]])} />
       <div className="mx-auto max-w-4xl px-4 py-14">
         <div className="mb-8 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-700">Reservations</p>

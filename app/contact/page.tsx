@@ -1,11 +1,12 @@
 import { Phone, MessageCircle, MapPin, Mail } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import JsonLd, { breadcrumbs } from "@/components/JsonLd";
 import InstagramIcon from "@/components/InstagramIcon";
 import { getBiz } from "@/lib/content";
 
 export const metadata = {
-  title: "Contact SV Tours & Travels – Cab Booking in Pune",
-  description: "Call 9860740890 or 9881372700 or WhatsApp us to book a cab in Pune. Lane no. 8, Telco Colony, Dattanagar, Ambegaon, Jambhulwadi Road, Pune 411046.",
+  title: "Contact Us – Book a Cab in Pune",
+  description: "Call 9860740890 or 9881372700, or WhatsApp us to book a cab in Pune. Lane no. 8, Telco Colony, Dattanagar, Ambegaon, Jambhulwadi Road, Pune 411046.",
   alternates: { canonical: "/contact" },
 };
 
@@ -14,6 +15,7 @@ export default async function Contact() {
   const row = "flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-200";
   return (
     <>
+      <JsonLd data={breadcrumbs([["Contact", "/contact"]])} />
       <PageHero eyebrow="Contact Us" title={BIZ.settings.contact_sub} sub="Call, WhatsApp or visit us. We respond quickly." />
       <section className="mx-auto grid max-w-3xl gap-4 px-4 py-14">
         {BIZ.phones.map((p) => <a key={p} href={`tel:${p}`} className={row}><Phone className="text-indigo-700" /><span className="font-semibold">{p}</span><span className="ml-auto text-sm text-slate-500">Call Now</span></a>)}

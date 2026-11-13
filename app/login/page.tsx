@@ -1,5 +1,7 @@
 import AuthForm from "@/components/AuthForm";
 
+export const metadata = { title: "Login", robots: { index: false, follow: false } };
+
 export default async function LoginPage({ searchParams }: PageProps<"/login">) {
   const sp = await searchParams;
   const next = typeof sp.next === "string" ? sp.next : "";

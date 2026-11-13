@@ -3,7 +3,7 @@ import { Home, Car, Phone, CalendarCheck } from "lucide-react";
 import { getBiz } from "@/lib/content";
 import { LogoFull } from "@/components/Logo";
 
-export const metadata = { title: "Page not found | SV Tours & Travels", robots: { index: false } };
+export const metadata = { title: "Page not found", robots: { index: false } };
 
 export default async function NotFound() {
   const BIZ = await getBiz();

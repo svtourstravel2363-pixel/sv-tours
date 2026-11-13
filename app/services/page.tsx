@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { Check } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import JsonLd, { breadcrumbs } from "@/components/JsonLd";
 import { getRates } from "@/lib/rates";
 import { getBiz, getItems, COLOURS } from "@/lib/content";
 
 export const metadata = {
-  title: "Cab Services in Pune – Local, Outstation, Airport & Tours | SV Tours & Travels",
-  description: "Local 8hr/80km cab packages from ₹2,200, outstation taxi from ₹13/km, Pune & Mumbai airport transfers and tour packages to Goa, Mahabaleshwar, Lonavala and all India.",
+  title: "Cab Services in Pune – Local, Outstation & Airport",
+  description: "Local 8hr/80km cab packages from ₹2,200, outstation taxi from ₹13/km, Pune and Mumbai airport transfers, and tour packages to Goa, Mahabaleshwar and Lonavala.",
   alternates: { canonical: "/services" },
 };
 
@@ -19,6 +20,8 @@ export default async function Services() {
   const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
   return (
     <>
+      <JsonLd data={breadcrumbs([["Services", "/services"]])} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "OfferCatalog", name: "SV Tours & Travels cab services", itemListElement: rates.filter((r) => !r.contact_only && r.price !== null).map((r) => ({ "@type": "Offer", name: `${r.kind === "local" ? "Local 8 hr / 80 km package" : "Outstation per KM"} – ${r.category}`, description: r.cars, priceCurrency: "INR", price: r.price, itemOffered: { "@type": "Service", name: r.category, areaServed: "Pune, Maharashtra, India", provider: { "@id": "https://svtourstravel.com/#business" } } })) }} />
       <PageHero eyebrow="Our Services" title="Travel solutions for every journey" sub="Local travel, outstation trips, airport transfers and tour packages from Pune, Mumbai and across India." />
       <section id="local" className="mx-auto max-w-6xl px-4 py-14">
         <h2 className="text-2xl font-extrabold">Local Travel Packages <span className="text-base font-medium text-slate-500">· 8 Hours / 80 KM</span></h2>

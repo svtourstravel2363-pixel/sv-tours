@@ -15,8 +15,47 @@ const H = ({ t, s }: { t: string; s: string }) => (
 );
 
 export const metadata = {
-  title: { absolute: "SV Tours & Travels | Cab Service in Pune – Local, Outstation, Airport & Tours" },
-  alternates: { canonical: "/" },
+  metadataBase: new URL("https://www.svtourstravel.com"),
+
+  title: {
+    absolute: "Cab Service in Pune | Local, Outstation & Airport Taxi | SV Tours & Travels",
+  },
+
+  description:
+    "Looking for cab service in Pune? Book Sedan, SUV, MUV, Innova Crysta and Tempo Traveller for local travel, Pune airport transfers and outstation trips. Contact SV Tours & Travels.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    title: "SV Tours & Travels | Cab Service in Pune",
+    description:
+      "Book reliable local, outstation and airport cab services in Pune. Sedan, SUV, MUV and Tempo Traveller available.",
+    url: "https://www.svtourstravel.com/",
+    siteName: "SV Tours & Travels",
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "SV Tours & Travels | Cab Service in Pune",
+    description:
+      "Book local, outstation and airport cabs in Pune with SV Tours & Travels.",
+  },
 };
 
 export default async function Home() {

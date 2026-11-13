@@ -5,9 +5,43 @@ import InstagramIcon from "@/components/InstagramIcon";
 import { getBiz } from "@/lib/content";
 
 export const metadata = {
-  title: "Contact Us – Book a Cab in Pune",
-  description: "Call 9860740890 or 9881372700, or WhatsApp us to book a cab in Pune. Lane no. 8, Telco Colony, Dattanagar, Ambegaon, Jambhulwadi Road, Pune 411046.",
-  alternates: { canonical: "/contact" },
+  title: {
+    absolute: "Contact SV Tours & Travels | Cab Service in Pune",
+  },
+
+  description:
+    "Contact SV Tours & Travels in Pune to book local cabs, outstation taxis and airport transfers. Call, WhatsApp or visit our office in Dattanagar, Ambegaon, Pune.",
+
+  alternates: {
+    canonical: "/contact",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
+
+  openGraph: {
+    title: "Contact SV Tours & Travels | Pune",
+    description:
+      "Get in touch with SV Tours & Travels for cab bookings, outstation trips and airport transfers in Pune.",
+    url: "https://www.svtourstravel.com/contact",
+    siteName: "SV Tours & Travels",
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact SV Tours & Travels | Pune",
+    description:
+      "Call or WhatsApp SV Tours & Travels for cab bookings in Pune.",
+  },
 };
 
 export default async function Contact() {

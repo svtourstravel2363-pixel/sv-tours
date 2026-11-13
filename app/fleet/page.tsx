@@ -8,9 +8,44 @@ import { FLEET } from "@/lib/data";
 import { getSettings } from "@/lib/content";
 
 export const metadata = {
-  title: "Cars on Rent in Pune – Sedan, SUV, Innova, Urbania",
-  description: "Hire a Toyota Glanza, Dzire, Rumion, Ertiga, Creta, Innova Crysta or Force Urbania with driver in Pune. Clean, comfortable vehicles with experienced drivers.",
-  alternates: { canonical: "/fleet" },
+  title: {
+    absolute:
+      "Cars on Rent in Pune | Sedan, SUV, MUV & Innova Crysta – SV Tours",
+  },
+
+  description:
+    "Book cars on rent in Pune with SV Tours & Travels. Choose from Sedan, SUV, MUV, Kia Carens, Innova Crysta and Force Urbania with experienced drivers for local trips, outstation travel and airport transfers.",
+
+  alternates: {
+    canonical: "/fleet",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
+
+  openGraph: {
+    title: "Cars on Rent in Pune | SV Tours & Travels",
+    description:
+      "Explore our Sedan, SUV, MUV, Innova Crysta and Tempo Traveller fleet. Book comfortable vehicles with drivers in Pune.",
+    url: "https://www.svtourstravel.com/fleet",
+    siteName: "SV Tours & Travels",
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Cars on Rent in Pune | SV Tours & Travels",
+    description:
+      "Book Sedan, SUV, MUV, Innova Crysta and Tempo Traveller with driver in Pune.",
+  },
 };
 const LABEL = { sedan: "Sedan", suv: "SUV", mpv: "MUV", premium: "Premium SUV", van: "Tempo Traveller / Urbania" } as const;
 

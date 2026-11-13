@@ -12,11 +12,12 @@ export const BIZ = {
 };
 
 export const SERVICES = ["Local Travel", "Outstation Trip", "Airport Pickup & Drop", "Tour Package"];
-export const VEHICLES = ["Sedan", "SUV / MUV", "Premium SUV (Innova Crysta)", "Tempo Traveller / Urbania"];
+export const VEHICLES = ["Sedan", "SUV", "MUV", "Premium SUV (Innova Crysta)", "Tempo Traveller / Urbania"];
 
 export const LOCAL = [
   { type: "Sedan", cars: "Hyundai Aura, Xcent, Glanza, Dzire", price: 2200, km: 13, hr: 100 },
-  { type: "SUV / MUV", cars: "Toyota Rumion, Ertiga, Creta", price: 3000, km: 16, hr: 200 },
+  { type: "SUV", cars: "Toyota Rumion, Ertiga", price: 3000, km: 16, hr: 200 },
+  { type: "MUV", cars: "Kia Carens", price: null, km: null, hr: null },
   { type: "Premium SUV", cars: "Toyota Innova Crysta", price: 4500, km: 20, hr: 300 },
 ];
 
@@ -37,7 +38,8 @@ export const TOURS = [
 
 export const FLEET = [
   { type: "Sedan", model: "Toyota Glanza", note: "Aura, Xcent and Dzire also available.", seats: "4 seats", kind: "sedan" as const, image: null as string | null },
-  { type: "SUV / MUV", model: "Toyota Rumion", note: "Ertiga and Creta also available.", seats: "6-7 seats", kind: "suv" as const, image: null as string | null },
+  { type: "SUV", model: "Toyota Rumion", note: "Ertiga also available.", seats: "6-7 seats", kind: "suv" as const, image: null as string | null },
+  { type: "MUV", model: "Kia Carens", note: "Comfortable MUV for family travel.", seats: "6-7 seats", kind: "mpv" as const, image: null as string | null },
   { type: "Premium SUV", model: "Toyota Innova Crysta", note: "Comfortable premium travel.", seats: "7 seats", kind: "premium" as const, image: null as string | null },
   { type: "Tempo Traveller / Urbania", model: "Force Urbania", note: "Different seating capacities available.", seats: "12-17 seats", kind: "van" as const, image: null as string | null },
 ];

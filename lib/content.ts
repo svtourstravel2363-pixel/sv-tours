@@ -28,7 +28,7 @@ export const DEFAULT_ITEMS: Record<Kind, Item[]> = {
     it("step", 2, "We confirm", "Our team calls you, confirms the vehicle, fare and driver details."),
     it("step", 3, "Enjoy the ride", "Your driver arrives on time. Travel comfortably and pay as agreed."),
   ],
-  stat: [it("stat", 1, "24×7", "Booking support"), it("stat", 2, "4+", "Vehicle categories"), it("stat", 3, "All India", "Tour coverage")],
+  stat: [it("stat", 1, "24×7", "Booking support"), it("stat", 2, "5+", "Vehicle categories"), it("stat", 3, "All India", "Tour coverage")],
   vehicle_type: VEHICLES.map((v, i) => it("vehicle_type", i + 1, v)),
 };
 

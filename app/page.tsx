@@ -200,19 +200,36 @@ export default async function Home() {
       </section>
 
       <section id="reviews" className="bg-slate-100 py-20">
-        <div className="mx-auto max-w-6xl px-4">
-          <H t={st.reviews_title} s={st.reviews_sub} />
-          {avg > 0 && <p className="-mt-6 mb-8 text-center text-slate-700"><Stars n={Math.round(avg)} /> <b>{avg.toFixed(1)}</b> / 5 from {reviews!.length} review(s)</p>}
-          {reviews && reviews.length > 0 ? (
-            <div className="grid gap-5 md:grid-cols-3">
-              {reviews.map((r) => (
-                <div key={r.id} className="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-200"><Stars n={r.rating} /><p className="mt-2 text-sm text-slate-700">“{r.comment}”</p><p className="mt-3 text-sm font-semibold">— {r.name}</p></div>
-              ))}
-            </div>
-          ) : <p className="text-center text-slate-500">No reviews yet. Be the first!</p>}
-          <p className="mt-8 text-center"><Link href="/review" className="rounded-full bg-slate-900 px-6 py-3 font-semibold text-white">Write a Review</Link>
-        </div>
-      </section>
+  <div className="mx-auto max-w-6xl px-4">
+    <H t={st.reviews_title} s={st.reviews_sub} />
+
+    {avg > 0 && (
+      <p className="-mt-6 mb-8 text-center text-slate-700">
+        <Stars n={Math.round(avg)} /> <b>{avg.toFixed(1)}</b> / 5 from {reviews!.length} review(s)
+      </p>
+    )}
+
+    {reviews && reviews.length > 0 ? (
+      <div className="grid gap-5 md:grid-cols-3">
+        {reviews.map((r) => (
+          <div key={r.id} className="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-200">
+            <Stars n={r.rating} />
+            <p className="mt-2 text-sm text-slate-700">“{r.comment}”</p>
+            <p className="mt-3 text-sm font-semibold">— {r.name}</p>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <p className="text-center text-slate-500">No reviews yet. Be the first!</p>
+    )}
+
+    <p className="mt-8 text-center">
+      <Link href="/review" className="rounded-full bg-slate-900 px-6 py-3 font-semibold text-white">
+        Write a Review
+      </Link>
+    </p>
+  </div>
+</section>
     </>
   );
 }

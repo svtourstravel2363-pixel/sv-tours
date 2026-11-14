@@ -210,7 +210,7 @@ export default async function Home() {
               ))}
             </div>
           ) : <p className="text-center text-slate-500">No reviews yet. Be the first!</p>}
-          <p className="mt-8 text-center"><Link href="/account#review" className="rounded-full bg-slate-900 px-6 py-3 font-semibold text-white">Write a Review</Link></p>
+          <p className="mt-8 text-center"><Link href="/review" className="rounded-full bg-slate-900 px-6 py-3 font-semibold text-white">Write a Review</Link>
         </div>
       </section>
     </>

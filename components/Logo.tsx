@@ -5,7 +5,7 @@ const display = Playfair_Display({ subsets: ["latin"], weight: ["700", "800"], d
 export function LogoMark({ size = 56 }: { size?: number }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src="/logo.svg" alt="SV Tours & Travels logo" width={size} height={size} className="shrink-0" style={{ width: size, height: size }} />
+    <img src="/Logo.svg" alt="SV Tours & Travels logo" width={size} height={size} className="shrink-0" style={{ width: size, height: size }} />
   );
 }
 

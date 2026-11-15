@@ -89,6 +89,7 @@ const jsonLd = {
       "@id": "https://www.svtourstravel.com/#website",
       url: "https://www.svtourstravel.com",
       name: "SV Tours & Travels",
+      alternateName: ["SV Tours and Travels", "SV Tours", "svtourstravel.com"],
       inLanguage: "en-IN",
       publisher: {
         "@id": "https://www.svtourstravel.com/#business",

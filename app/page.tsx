@@ -19,11 +19,11 @@ export const metadata = {
   metadataBase: new URL("https://www.svtourstravel.com"),
 
   title: {
-    absolute: "Cab Service in Pune | Local, Outstation & Airport Taxi | SV Tours & Travels",
+    absolute: "Car Rental & Cab Service in Pune | SV Tours & Travels",
   },
 
   description:
-    "Looking for cab service in Pune? Book Sedan, SUV, MUV, Innova Crysta and Tempo Traveller for local travel, Pune airport transfers and outstation trips. Contact SV Tours & Travels.",
+    "Car rental with driver and cab service in Pune. Sedan, SUV, Innova Crysta and Tempo Traveller for local travel, Pune and Mumbai airport transfers and outstation trips. Call 9860740890.",
 
   alternates: {
     canonical: "/",
@@ -42,9 +42,9 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "SV Tours & Travels | Cab Service in Pune",
+    title: "SV Tours & Travels | Car Rental & Cab Service in Pune",
     description:
-      "Book reliable local, outstation and airport cab services in Pune. Sedan, SUV, MUV and Tempo Traveller available.",
+      "Car rental with driver in Pune: local, outstation and airport cabs. Sedan, SUV, Innova Crysta and Tempo Traveller available.",
     url: "https://www.svtourstravel.com/",
     siteName: "SV Tours & Travels",
     locale: "en_IN",

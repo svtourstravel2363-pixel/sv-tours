@@ -23,8 +23,8 @@ export default async function Account() {
       <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
         <div><h1 className="text-3xl font-extrabold">Hello, {profile?.full_name || "Traveller"} 👋</h1><p className="text-slate-600">Manage your bookings, profile and reviews.</p></div>
         <div className="flex gap-2">
-          <Link href="/booking" className="rounded-full bg-amber-400 px-5 py-2.5 font-bold text-slate-950">+ New Booking</Link>
-          {profile?.role === "admin" && <Link href="/admin" className="rounded-full bg-indigo-900 px-5 py-2.5 font-semibold text-white">Admin Panel</Link>}
+          <Link href="/booking" className="rounded-full bg-brand-400 px-5 py-2.5 font-bold text-navy-950">+ New Booking</Link>
+          {profile?.role === "admin" && <Link href="/admin" className="rounded-full bg-navy-900 px-5 py-2.5 font-semibold text-white">Admin Panel</Link>}
           <form action="/auth/signout" method="post"><button className="rounded-full border border-slate-300 px-5 py-2.5 font-semibold">Logout</button></form>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default async function Account() {
                 </div>
               ))}
             </div>
-          ) : <p className="rounded-2xl bg-white p-6 text-slate-500 ring-1 ring-slate-200">No bookings yet. <Link href="/booking" className="font-semibold text-indigo-700">Book your first ride →</Link></p>}
+          ) : <p className="rounded-2xl bg-white p-6 text-slate-500 ring-1 ring-slate-200">No bookings yet. <Link href="/booking" className="font-semibold text-navy-700">Book your first ride →</Link></p>}
 
           <h2 id="review" className="mb-3 mt-10 text-xl font-bold">Write a Review</h2>
           <ReviewForm defaultName={profile?.full_name ?? ""} />

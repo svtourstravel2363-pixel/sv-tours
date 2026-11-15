@@ -16,7 +16,7 @@ function RateForm({ r }: { r: Rate }) {
         </>
       ) : <div className="sm:col-span-4" />}
       <label className="flex items-center gap-2 text-sm sm:col-span-4"><input type="checkbox" name="contact_only" defaultChecked={r.contact_only} className="h-4 w-4" /> Show &ldquo;Contact for Pricing&rdquo; instead of a price</label>
-      <div className="sm:col-span-2 sm:text-right"><button className="rounded-lg bg-slate-900 px-5 py-2 text-sm font-semibold text-white hover:bg-slate-700">Save</button></div>
+      <div className="sm:col-span-2 sm:text-right"><button className="rounded-lg bg-navy-900 px-5 py-2 text-sm font-semibold text-white hover:bg-slate-700">Save</button></div>
     </form>
   );
 }
@@ -26,12 +26,12 @@ export default async function AdminRates() {
   return (
     <div>
       <h1 className="mb-1 text-2xl font-extrabold">Rates &amp; Prices</h1>
-      <p className="mb-6 text-sm text-slate-600">Changes appear on the public <a className="font-semibold text-indigo-700" href="/services" target="_blank">Services page</a> right after you save.</p>
+      <p className="mb-6 text-sm text-slate-600">Changes appear on the public <a className="font-semibold text-navy-700" href="/services" target="_blank">Services page</a> right after you save.</p>
       {!fromDb ? (
-        <div className="rounded-2xl bg-amber-50 p-6 ring-1 ring-amber-200">
+        <div className="rounded-2xl bg-brand-50 p-6 ring-1 ring-brand-200">
           <p className="font-semibold">Rates are not set up in the database yet.</p>
           <p className="mt-1 text-sm text-slate-700">The website is showing the built-in default prices. First run <code>supabase/rates.sql</code> in the Supabase SQL Editor (creates the table), then click the button below to load the current prices so you can edit them.</p>
-          <form action={loadDefaultRates} className="mt-4"><button className="rounded-lg bg-amber-500 px-5 py-2.5 font-bold text-slate-950">Load current prices</button></form>
+          <form action={loadDefaultRates} className="mt-4"><button className="rounded-lg bg-brand-500 px-5 py-2.5 font-bold text-navy-950">Load current prices</button></form>
         </div>
       ) : (
         <div className="space-y-8">

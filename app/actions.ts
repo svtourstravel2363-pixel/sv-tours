@@ -80,7 +80,7 @@ export async function login(_: Result | null, f: FormData): Promise<Result> {
 
 export async function signup(_: Result | null, f: FormData): Promise<Result> {
   const supabase = await createClient();
-  const origin = (await headers()).get("origin") ?? "https://svtourstravel.com";
+  const origin = (await headers()).get("origin") ?? "https://www.svtourstravel.com";
   const { data, error } = await supabase.auth.signUp({
     email: s(f, "email"),
     password: s(f, "password"),

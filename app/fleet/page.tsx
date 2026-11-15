@@ -63,10 +63,10 @@ export default async function Fleet() {
           {fleet.map((v) => (
             <div key={v.model} className="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-200">
               <VehicleVisual name={v.model} category={v.kind} image={v.image} plate={"plate" in v ? v.plate : null} />
-              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-amber-700">{v.type}</p>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-brand-700">{v.type}</p>
               <h2 className="text-lg font-bold" style={{ fontFamily: "inherit" }}>{v.model}</h2>
               <p className="text-sm text-slate-600">{v.note}</p><p className="mt-1 text-xs text-slate-500">{v.seats}</p>
-              <Link href={`/booking?vehicle=${encodeURIComponent(v.type)}`} className="mt-4 inline-block text-sm font-semibold text-indigo-700">Book this vehicle →</Link>
+              <Link href={`/booking?vehicle=${encodeURIComponent(v.type)}`} className="mt-4 inline-block text-sm font-semibold text-navy-700">Book this vehicle →</Link>
             </div>
           ))}
         </div>

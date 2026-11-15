@@ -9,7 +9,7 @@ export const metadata = {
 export default function ReviewPage() {
   return (
     <main className="mx-auto max-w-2xl px-4 py-16">
-      <h1 className="mb-3 text-center text-3xl font-extrabold text-slate-900">
+      <h1 className="mb-3 text-center text-3xl font-extrabold text-navy-900">
         Write a Review
       </h1>
 
@@ -20,7 +20,7 @@ export default function ReviewPage() {
       <ReviewForm />
 
       <p className="mt-6 text-center">
-        <Link href="/" className="font-semibold text-indigo-700">
+        <Link href="/" className="font-semibold text-navy-700">
           ← Back to Home
         </Link>
       </p>

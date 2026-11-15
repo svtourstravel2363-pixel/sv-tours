@@ -45,9 +45,9 @@ export default async function AdminContent({ params, searchParams }: PageProps<"
       {error && <p className="mb-4 rounded-lg bg-rose-50 p-3 text-sm text-rose-800">{error}</p>}
 
       {!rows?.length && (
-        <div className="mb-6 rounded-2xl bg-amber-50 p-5 ring-1 ring-amber-200">
+        <div className="mb-6 rounded-2xl bg-brand-50 p-5 ring-1 ring-brand-200">
           <p className="text-sm text-slate-700">Nothing saved yet — the website is showing the built-in {DEFAULT_ITEMS[cfg.kind].length} default items. Load them here to edit, or add your own below. (If this fails, run <code>supabase/content.sql</code> in the Supabase SQL Editor first.)</p>
-          <form action={seedKind} className="mt-3"><input type="hidden" name="kind" value={cfg.kind} /><button className="rounded-lg bg-amber-500 px-5 py-2 font-bold text-slate-950">Load current items</button></form>
+          <form action={seedKind} className="mt-3"><input type="hidden" name="kind" value={cfg.kind} /><button className="rounded-lg bg-brand-500 px-5 py-2 font-bold text-navy-950">Load current items</button></form>
         </div>
       )}
 
@@ -66,20 +66,20 @@ export default async function AdminContent({ params, searchParams }: PageProps<"
             <label className={lbl}>Order<input name="sort" type="number" defaultValue={r.sort} className={inputCls + " mt-1"} /></label>
             <label className="flex items-center gap-2 self-end pb-2 text-sm"><input type="checkbox" name="active" defaultChecked={r.active} className="h-4 w-4" /> Show on website</label>
             <div className="flex gap-3 sm:col-span-2">
-              <button className="rounded-lg bg-slate-900 px-5 py-2 text-sm font-semibold text-white">Save</button>
+              <button className="rounded-lg bg-navy-900 px-5 py-2 text-sm font-semibold text-white">Save</button>
               <button formAction={deleteItem} formNoValidate className="rounded-lg px-3 py-2 text-sm text-rose-600 hover:bg-rose-50">Delete</button>
             </div>
           </form>
         ))}
       </div>
 
-      <form action={addItem} className="mt-8 grid gap-3 rounded-2xl bg-white p-5 shadow-sm ring-2 ring-amber-200 sm:grid-cols-2">
+      <form action={addItem} className="mt-8 grid gap-3 rounded-2xl bg-white p-5 shadow-sm ring-2 ring-brand-200 sm:grid-cols-2">
         <h2 className="font-bold sm:col-span-2">Add new</h2>
         <input type="hidden" name="kind" value={cfg.kind} />
         {cfg.fields.map((f) => <label key={f.name} className={lbl + (f.type === "area" || f.name === "title" ? " sm:col-span-2" : "")}>{f.label}<Input f={f} /></label>)}
         {cfg.kind === "tour" && <label className={lbl + " sm:col-span-2"}>Cover image (optional) — JPG, PNG or WebP, max 4 MB<input type="file" name="image" accept="image/jpeg,image/png,image/webp" className={inputCls + " mt-1"} /></label>}
         <label className={lbl}>Order<input name="sort" type="number" defaultValue={(rows?.length ?? 0) + 1} className={inputCls + " mt-1"} /></label>
-        <div className="sm:col-span-2"><button className="rounded-lg bg-amber-500 px-5 py-2 font-bold text-slate-950">Add</button></div>
+        <div className="sm:col-span-2"><button className="rounded-lg bg-brand-500 px-5 py-2 font-bold text-navy-950">Add</button></div>
       </form>
     </div>
   );

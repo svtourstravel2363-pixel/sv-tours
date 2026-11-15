@@ -62,7 +62,7 @@ export default async function AdminSettings({ searchParams }: PageProps<"/admin/
             </div>
           </section>
         ))}
-        <button className="rounded-lg bg-slate-900 px-6 py-3 font-semibold text-white hover:bg-slate-700">Save All Settings</button>
+        <button className="rounded-lg bg-navy-900 px-6 py-3 font-semibold text-white hover:bg-slate-700">Save All Settings</button>
       </form>
     </div>
   );

@@ -1,7 +1,7 @@
 export const BIZ = {
   name: "SV Tours & Travels",
   legal: "SV Enterprises",
-  tagline: "Your Journey, Our Responsibility",
+  tagline: "Journey Beyond Destination",
   phones: ["9860740890", "9881372700"],
   whatsapp: "919860740890",
   email: "svtourstravel2363@gmail.com",

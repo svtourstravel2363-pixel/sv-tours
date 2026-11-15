@@ -9,7 +9,7 @@ import Script from "next/script";
 const playfair = Playfair_Display({ variable: "--font-display", subsets: ["latin"], weight: ["600", "700", "800"] });
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 
-export const viewport: Viewport = { themeColor: "#0d2255", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#06425c", width: "device-width", initialScale: 1 };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.svtourstravel.com"),
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   creator: "SV Enterprises",
   publisher: "SV Enterprises",
   category: "travel",
-  keywords: ["cab service in Pune", "taxi service Pune", "outstation cab Pune", "Pune to Mumbai cab", "Pune airport taxi", "Mumbai airport taxi from Pune", "Innova Crysta on rent Pune", "tempo traveller on rent Pune", "Pune to Goa cab", "Mahabaleshwar tour from Pune", "Lonavala cab", "car rental Ambegaon Pune", "SV Tours & Travels"],
+  keywords: ["car rental near me", "car rental in Pune", "car rental with driver Pune", "car rental Mumbai to Pune", "cab service in Pune", "taxi service Pune", "outstation cab Pune", "Pune to Mumbai cab", "Pune airport taxi", "Mumbai airport taxi from Pune", "Innova Crysta on rent Pune", "tempo traveller on rent Pune", "Pune to Goa cab", "Mahabaleshwar tour from Pune", "Lonavala cab", "car rental Ambegaon Pune", "SV Tours & Travels"],
   formatDetection: { telephone: true, address: true, email: true },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   openGraph: {
     title: "SV Tours & Travels – Cab, Outstation & Tour Packages in Pune",
     description: "Comfortable rides, reliable service. Local, outstation, airport transfers and tour packages from Pune across Maharashtra and India.",
-    url: "https://svtourstravel.com", siteName: "SV Tours & Travels", locale: "en_IN", type: "website",
-    images: [{ url: "/og-logo.png", width: 1024, height: 1024, alt: "SV Tours & Travels - Your Journey, Our Responsibility" }],
+    url: "https://www.svtourstravel.com", siteName: "SV Tours & Travels", locale: "en_IN", type: "website",
+    images: [{ url: "/og-logo.png", width: 1024, height: 1024, alt: "SV Tours & Travels - Journey Beyond Destination" }],
   },
   twitter: { card: "summary_large_image", title: "SV Tours & Travels | Cab Service in Pune", description: "Local, outstation, airport and tour packages from Pune.", images: ["/og-logo.png"] },
 };
@@ -45,7 +45,7 @@ const jsonLd = {
       image: "https://www.svtourstravel.com/og-logo.png",
       telephone: ["+919860740890", "+919881372700"],
       email: "svtourstravel2363@gmail.com",
-      slogan: "Your Journey, Our Responsibility",
+      slogan: "Journey Beyond Destination",
       description:
         "Cab service in Pune: local packages, outstation taxi, airport transfers and tour packages.",
       address: {

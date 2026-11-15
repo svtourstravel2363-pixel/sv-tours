@@ -15,7 +15,7 @@ export default function ReviewForm({ defaultName = "" }: { defaultName?: string 
         </select>
       </Field>
       <Field label="Write your experience..."><textarea name="comment" rows={4} required minLength={10} className={inputCls} /></Field>
-      <button disabled={pending} className="rounded-lg bg-slate-900 px-5 py-2.5 font-semibold text-white hover:bg-slate-700 disabled:opacity-60">{pending ? "Submitting..." : "Submit Review"}</button>
+      <button disabled={pending} className="rounded-lg bg-navy-900 px-5 py-2.5 font-semibold text-white hover:bg-slate-700 disabled:opacity-60">{pending ? "Submitting..." : "Submit Review"}</button>
       <p className="text-xs text-slate-500">Your review will be published after admin approval.</p>
       {state && <p className={`rounded-lg p-3 text-sm ${state.ok ? "bg-emerald-50 text-emerald-800" : "bg-rose-50 text-rose-800"}`}>{state.message}</p>}
     </form>

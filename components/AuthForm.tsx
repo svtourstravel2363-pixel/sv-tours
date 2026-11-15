@@ -24,7 +24,7 @@ export default function AuthForm({ next }: { next: string }) {
           <input type="hidden" name="next" value={next} />
           <Field label="Email"><input type="email" name="email" required className={inputCls} /></Field>
           <Field label="Password"><input type="password" name="password" required className={inputCls} /></Field>
-          <button disabled={lp} className="rounded-lg bg-amber-400 py-3 font-bold text-slate-950 disabled:opacity-60">{lp ? "Signing in..." : "Login"}</button>
+          <button disabled={lp} className="rounded-lg bg-brand-400 py-3 font-bold text-navy-950 disabled:opacity-60">{lp ? "Signing in..." : "Login"}</button>
         </form>
       ) : (
         <form action={sa} className="mt-5 grid gap-4">
@@ -32,7 +32,7 @@ export default function AuthForm({ next }: { next: string }) {
           <Field label="Mobile Number"><input name="phone" required className={inputCls} /></Field>
           <Field label="Email"><input type="email" name="email" required className={inputCls} /></Field>
           <Field label="Password (min 6 characters)"><input type="password" name="password" minLength={6} required className={inputCls} /></Field>
-          <button disabled={sp} className="rounded-lg bg-amber-400 py-3 font-bold text-slate-950 disabled:opacity-60">{sp ? "Creating..." : "Create Account"}</button>
+          <button disabled={sp} className="rounded-lg bg-brand-400 py-3 font-bold text-navy-950 disabled:opacity-60">{sp ? "Creating..." : "Create Account"}</button>
         </form>
       )}
       {state && <p className={`mt-4 rounded-lg p-3 text-sm ${state.ok ? "bg-emerald-50 text-emerald-800" : "bg-rose-50 text-rose-800"}`}>{state.message}</p>}

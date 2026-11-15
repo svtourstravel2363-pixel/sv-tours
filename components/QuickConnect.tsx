@@ -21,7 +21,7 @@ export default function QuickConnect({ whatsapp, phone }: { whatsapp: string; ph
   }
 
   return (
-    <form onSubmit={onSubmit} className="relative z-10 rounded-2xl bg-white p-6 text-slate-900 shadow-2xl ring-1 ring-amber-200">
+    <form onSubmit={onSubmit} className="relative z-10 rounded-2xl bg-white p-6 text-navy-900 shadow-2xl ring-1 ring-brand-200">
       <h2 className="text-xl font-extrabold">Connect with us directly</h2>
       <p className="mb-4 text-sm text-slate-500">Just your name and mobile — we reply on WhatsApp.</p>
       <div className="grid gap-3">
@@ -32,7 +32,7 @@ export default function QuickConnect({ whatsapp, phone }: { whatsapp: string; ph
           <MessageCircle size={20} /> {pending ? "Sending..." : "Send on WhatsApp"}
         </button>
       </div>
-      <p className="mt-3 text-center text-xs text-slate-500">No login needed. Or <a href={`tel:${phone}`} className="font-semibold text-indigo-700">call {phone}</a> · <a href="/booking" className="font-semibold text-indigo-700">full booking form</a></p>
+      <p className="mt-3 text-center text-xs text-slate-500">No login needed. Or <a href={`tel:${phone}`} className="font-semibold text-navy-700">call {phone}</a> · <a href="/booking" className="font-semibold text-navy-700">full booking form</a></p>
       {state?.ok && <p className="mt-3 rounded-lg bg-emerald-50 p-2 text-center text-sm text-emerald-800">Thank you! We will contact you shortly.</p>}
     </form>
   );
